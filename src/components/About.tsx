@@ -1,46 +1,58 @@
 import React from 'react';
 import {
+  Box,
   Container,
   Typography,
-  Box,
   Grid,
   Paper,
   Avatar,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Divider,
+  Rating,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import PeopleIcon from '@mui/icons-material/People';
-import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import ScienceIcon from '@mui/icons-material/Science';
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import PeopleIcon from '@mui/icons-material/People';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
-const About: React.FC = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
-  };
+const stats = [
+  { number: '100+', label: 'Expert Doctors' },
+  { number: '10,000+', label: 'Happy Patients' },
+  { number: '24/7', label: 'Availability' },
+  { number: '95%', label: 'Success Rate' },
+];
 
-  const stats = [
-    { number: '15+', label: 'Years of Experience' },
-    { number: '50+', label: 'Expert Doctors' },
-    { number: '10K+', label: 'Happy Patients' },
-    { number: '24/7', label: 'Emergency Care' }
-  ];
+const values = [
+  {
+    title: 'Innovation',
+    description: 'We constantly innovate to provide the best healthcare solutions',
+    icon: <ScienceIcon />,
+  },
+  {
+    title: 'Excellence',
+    description: 'We strive for excellence in all our services and treatments',
+    icon: <HealthAndSafetyIcon />,
+  },
+  {
+    title: 'Compassion',
+    description: 'We care deeply about our patients and their well-being',
+    icon: <PeopleIcon />,
+  },
+  {
+    title: 'Integrity',
+    description: 'We maintain the highest standards of medical ethics',
+    icon: <LocalHospitalIcon />,
+  },
+];
 
-  const values = [
-    { icon: <LocalHospitalIcon />, title: 'Quality Care', description: 'We provide the highest standard of medical care' },
-    { icon: <PeopleIcon />, title: 'Patient First', description: 'Your health and comfort are our top priorities' },
-    { icon: <EmojiObjectsIcon />, title: 'Innovation', description: 'Using cutting-edge technology for better healthcare' },
-    { icon: <AccessTimeIcon />, title: 'Accessibility', description: 'Round-the-clock availability for your needs' }
-  ];
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+};
 
+const About = () => {
   return (
     <Box>
       {/* Hero Section */}
@@ -71,11 +83,12 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <Typography
-              variant="h2"
+              variant="h1"
               sx={{
+                fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
+                fontWeight: 700,
+                mb: 2,
                 color: 'white',
-                fontWeight: 'bold',
-                textAlign: 'center',
                 textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
               }}
             >
@@ -85,12 +98,11 @@ const About: React.FC = () => {
               variant="h5"
               sx={{
                 color: 'white',
-                textAlign: 'center',
-                mt: 2,
+                maxWidth: '800px',
                 textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
               }}
             >
-              Transforming Healthcare Through Innovation
+              We are revolutionizing healthcare through artificial intelligence and innovative technology
             </Typography>
           </motion.div>
         </Container>

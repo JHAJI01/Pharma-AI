@@ -47,7 +47,7 @@ const borderAnimation = keyframes`
   }
 `;
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));

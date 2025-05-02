@@ -94,7 +94,7 @@ const testimonials = [
   },
 ];
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <Box>
       {/* Hero Section */}
