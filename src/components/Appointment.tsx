@@ -141,15 +141,27 @@ const Appointment: React.FC = () => {
         backgroundImage: 'url(/images/medical-bg.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
         minHeight: '100vh',
         py: 8,
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%)',
+          backdropFilter: 'blur(2px)',
+        },
       }}
     >
       <Container maxWidth="md">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
         >
           <Typography
             variant="h3"
@@ -159,9 +171,8 @@ const Appointment: React.FC = () => {
               textAlign: 'center',
               mb: 4,
               fontWeight: 'bold',
-              background: 'linear-gradient(45deg, #2196f3, #4caf50)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: 'white',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
             }}
           >
             Book an Appointment
@@ -174,6 +185,7 @@ const Appointment: React.FC = () => {
               borderRadius: 2,
               background: 'rgba(255, 255, 255, 0.95)',
               backdropFilter: 'blur(10px)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
             }}
           >
             {submitSuccess ? (
@@ -211,6 +223,15 @@ const Appointment: React.FC = () => {
                             height="200"
                             image={doctor.image}
                             alt={doctor.name}
+                            sx={{
+                              objectFit: 'cover',
+                              transition: 'transform 0.3s ease',
+                              '&:hover': {
+                                transform: 'scale(1.05)',
+                              },
+                              borderRadius: '8px 8px 0 0',
+                              borderBottom: '1px solid rgba(0,0,0,0.1)',
+                            }}
                           />
                           <CardContent>
                             <Typography variant="h6" gutterBottom>
