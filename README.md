@@ -13,15 +13,6 @@ A modern, responsive medical website built with React, TypeScript, and Material-
 - Beautiful gradient effects
 - Mobile-friendly navigation
 
-## Technologies Used
-
-- React
-- TypeScript
-- Material-UI
-- Framer Motion
-- Vite
-- React Router
-
 ## Getting Started
 
 1. Clone the repository:

@@ -1,12 +1,9 @@
-import React from 'react';
 import {
   Box,
   Container,
   Typography,
   Grid,
   Paper,
-  Avatar,
-  useTheme,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
@@ -54,8 +51,6 @@ const services = [
 ];
 
 const Services: React.FC = () => {
-  const theme = useTheme();
-
   return (
     <Box
       sx={{
