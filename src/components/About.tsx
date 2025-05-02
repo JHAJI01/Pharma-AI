@@ -6,14 +6,12 @@ import {
   Grid,
   Paper,
   Avatar,
-  Rating,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import ScienceIcon from '@mui/icons-material/Science';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import PeopleIcon from '@mui/icons-material/People';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 const stats = [

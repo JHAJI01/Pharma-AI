@@ -1,6 +1,18 @@
 import React from 'react';
-import { Container, Typography, Box, Grid, Card, CardContent, useTheme } from '@mui/material';
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Paper,
+  Avatar,
+  useTheme,
+} from '@mui/material';
 import { motion } from 'framer-motion';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import ScienceIcon from '@mui/icons-material/Science';
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import PeopleIcon from '@mui/icons-material/People';
 
 const services = [
   {
@@ -106,7 +118,7 @@ const Services: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card
+                  <Paper
                     sx={{
                       height: '100%',
                       display: 'flex',
@@ -156,7 +168,7 @@ const Services: React.FC = () => {
                         {service.icon}
                       </Box>
                     </Box>
-                    <CardContent
+                    <Box
                       sx={{
                         flexGrow: 1,
                         p: 3,
@@ -196,8 +208,8 @@ const Services: React.FC = () => {
                       >
                         {service.description}
                       </Typography>
-                    </CardContent>
-                  </Card>
+                    </Box>
+                  </Paper>
                 </motion.div>
               </Grid>
             ))}

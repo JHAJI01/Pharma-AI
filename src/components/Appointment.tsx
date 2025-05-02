@@ -64,16 +64,28 @@ const doctors = [
   }
 ];
 
+interface FormData {
+  doctor: string;
+  date: Date | null;
+  time: string;
+  name: string;
+  email: string;
+  phone: string;
+  reason: string;
+}
+
+const initialFormData: FormData = {
+  doctor: '',
+  date: null,
+  time: '',
+  name: '',
+  email: '',
+  phone: '',
+  reason: '',
+};
+
 const Appointment: React.FC = () => {
-  const [formData, setFormData] = useState({
-    doctor: '',
-    date: null,
-    time: '',
-    name: '',
-    email: '',
-    phone: '',
-    reason: '',
-  });
+  const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -118,15 +130,7 @@ const Appointment: React.FC = () => {
         // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 1500));
         setSubmitSuccess(true);
-        setFormData({
-          doctor: '',
-          date: null,
-          time: '',
-          name: '',
-          email: '',
-          phone: '',
-          reason: '',
-        });
+        setFormData(initialFormData);
       } catch (error) {
         console.error('Error submitting appointment:', error);
       } finally {
